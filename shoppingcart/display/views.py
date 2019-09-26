@@ -13,12 +13,16 @@ from rest_framework.renderers import TemplateHTMLRenderer
 # Create your views here.
 
  #View to handle student creation          
-class ItemDisplayView(APIView):
+class ItemDisplayView(generics.ListAPIView):
     renderer_classes = [ TemplateHTMLRenderer ]
     template_name = 'index.html'
     def get(self, request):
         queryset = Item.objects.all()
         return Response({'items':queryset})
+    #queryset =  Item.objects.all()
+    #serializer_class = ItemSerializer
+    
+        
     
     
 class ItemCreateView(generics.ListCreateAPIView):

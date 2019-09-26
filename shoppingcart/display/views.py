@@ -13,7 +13,7 @@ from rest_framework.renderers import TemplateHTMLRenderer
 # Create your views here.
 
  #View to handle student creation          
-class ItemDisplayView(generics.ListAPIView):
+class ItemDisplayView(generics.ListCreateAPIView):
     renderer_classes = [ TemplateHTMLRenderer ]
     template_name = 'index.html'
     def get(self, request):

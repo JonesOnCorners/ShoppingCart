@@ -2,46 +2,32 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />    
-    <link rel="stylesheet" type="text/js" href="{% static 'js/index.js' %}" />    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" type="text/js" href="{% static 'js/index.js' %}" />
 </head>
 
 
 <body>
-    <h1 class="top-row">ShopLocal</h1>
-    <div class="title">
-        Shopping Bag
-    </div>
-     {% for d in items %}
-    <!-- <br/> Name: {{ d.item_name }}
-    <br/> Price: {{ d.item_price }}<br/>
-    <button type="submit">Add to Cart</button>
-    <button type="submit">Remove from Cart</button> -->
-
-
+    <h1>ShopLocal</h1>
+    {% for d in items %}
     <div class="shopping-cart">
-        <!-- Title -->
-        
-
-        <!-- Product #1 -->
         <div class="item">
-            <div class="buttons">
-                <span class="delete-btn"></span>
-                <span class="like-btn"></span>
-            </div>
-
-            <div class="image">
-                <img src="item-1.png" alt="" />
-            </div>
-
             <div class="description">
-                <span>{{d.item_name}}</span>
-                <span class="total-price">-- INR {{d.item_price}}</span>                
-            </div>                       
-        </div>        
-    </div>
+                <span><div class="price-bold">₹{{d.item_name}}</div></span>
+                <span><div class="price-bold">₹{{d.item_price}}</div></span>
 
-    <br> {% endfor %}
+                <br>
+                <span class="button"><button type="button">Add to Cart</button></span>
+                <br>
+                <span class="button"><button type="button">QuickView</button></span>
+                <div class="image"><img src="{% static 'images/wallet.jpg' %}"></div>
+            </div>
+        </div>
+    </div>
+    {% endfor %} {% for d in items %}
+    <div class="shopping-cart"></div>
+    <div class="image"><img src="{% static 'images/wallet.jpg' %}"></div>
+    {% endfor %}
 </body>
 
 </html>
